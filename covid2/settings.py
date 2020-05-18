@@ -27,7 +27,7 @@ SECRET_KEY = '38r#1bgg0q_#=mhz-f$vvyicbk146#+0i3vh)a21od!bmzyy%f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['19-ncov.cf']
+ALLOWED_HOSTS = ['19-ncov.cf','localhost','35.232.197.225']
 
 # Application definition
 
@@ -130,7 +130,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, "static"),
 ]
