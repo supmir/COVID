@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <meta name="description" content="What we want to say to COVID-19.">
+    <meta name="author" content="Amir Iskandar">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Dear COVID-19</title>
+<style>
+
+.content {
+  cursor: pointer;
+  max-height: 75px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+
+<body>
+    <div class="w3-container w3-teal">
+        <h1>Dear COVID-19...</h1>
+    </div>
+    <div class="w3-cell-row">
+        <div class="w3-container w3-col s0 m1 l2"></div>
+        <div class="w3-container w3-col s12 m10 l8">
+            <div class="w3-center">
+                <h3>2019 Novel Coronavirus (COVID-19) Stats</h3>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpzcZ5eQa23MSU4KU4jWG7q1HYBaECWI-OLgXNDq1OXUw4yw/viewform?usp=sf_link"
+                    class="w3-button w3-green w3-block">Say something to COVID-19</a>
+                </br>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="w3-container w3-col s0 m1 l2"></div>
+    </div>
+
+
+
+
+    {% if latest_message_list %}
+    <div class="w3-row-padding">
+        {% for message in latest_message_list %}
+        <!-- {% cycle 1 2 3 as x silent %} -->
+        <!-- {% if x == 1 %}
+    <div class="w3-row-padding">
+        {% endif %} -->
+
+        <div class="w3-padding-16 w3-col m6 l4">
+            <div class="w3-card-4">
+                <div class="w3-container content">
+                    <p>{{ message.message }}</p>
+                </div>
+                {% if message.verified %}
+                <footer class="w3-container w3-blue">
+                    <p style="text-align:left;">
+                        <i>verified</i>
+                        <span style="float:right;">
+                            {{ message.name }}, {{ message.age }}
+                        </span>
+                    </p>
+                </footer>
+                {% else %}
+                <footer class="w3-container w3-lime">
+                    <p style="text-align:right;">
+                        {{ message.name }}, {{ message.age }}
+                    </p>
+                </footer>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- {% if x == 3 %}
+    </div>
+    {% endif %} -->
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <p>No messages are available. Be the first one!</p>
+    {% endif %}
+
+
+
+<script>
+var coll = document.getElementsByClassName("content");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+</body>
+
+</html>
