@@ -1,4 +1,4 @@
-isLinux = False
+isLinux = True
 import csv
 import plotly
 import plotly.offline as plo
@@ -132,7 +132,7 @@ def func():
     else:
         dPath, wPath = "/Users/amir/Desktop/covid/","/Users/amir/Desktop/covid/"
 
-    # downloadData(dPath)
+    downloadData(dPath)
     data, data2 = loadData(dPath)
 
     dates = list(range(len(data[0][4:])))
