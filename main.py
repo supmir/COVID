@@ -19,21 +19,21 @@ def downloadData(dPath):
         print("Downloading data")
         url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
         myfile = session.get(url, allow_redirects=True)
-        open(dPath+"data.csv", 'wb').write(myfile.content)
         print("Data (1/2) downloaded")
     except:
         print("Data (1/2) failed to download")
-
         pass
+    open(dPath+"data.csv", 'wb').write(myfile.content)
+
     try:
         # url = "https://ocgptweb.azurewebsites.net/CSVDownload"
         url = "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv"
         myfile = session.get(url, allow_redirects=True)
-        open(dPath+"data2.csv", 'wb').write(myfile.content)
         print("Data (2/2) downloaded")
     except:
         print("Data (2/2) failed to download")
         pass
+    open(dPath+"data2.csv", 'wb').write(myfile.content)
 
 def loadData(dPath):
     print("Loading data")
