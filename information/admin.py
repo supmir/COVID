@@ -19,7 +19,7 @@ class MessagesAdmin(admin.ModelAdmin):
     make_visible.short_description = "Mark selected messages as visible"
 
     def make_hidden(self, request, queryset):
-        updated = queryset.update(visible=True)
+        updated = queryset.update(visible=False)
         self.message_user(request, ngettext(
             '%d message was successfully marked as hidden.',
             '%d messages were successfully marked as hidden.',
