@@ -8,13 +8,24 @@ import time
 import fileinput
 
 def downloadData(dPath):
-    print("Downloading data")
-    url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
-    myfile = requests.get(url, allow_redirects=True)
-    open(dPath+"data.csv", 'wb').write(myfile.content)
-    url = "https://ocgptweb.azurewebsites.net/CSVDownload"
-    myfile = requests.get(url, allow_redirects=True)
-    open(dPath+"data2.csv", 'wb').write(myfile.content)
+    try:
+        print("Downloading data")
+        url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
+        myfile = requests.get(url, allow_redirects=True)
+        open(dPath+"data.csv", 'wb').write(myfile.content)
+        print("Data (1/2) downloaded")
+    except:
+        print("Data (1/2) failed to download")
+
+        pass
+    try:
+        url = "https://ocgptweb.azurewebsites.net/CSVDownload"
+        myfile = requests.get(url, allow_redirects=True)
+        open(dPath+"data2.csv", 'wb').write(myfile.content)
+        print("Data (2/2) downloaded")
+    except:
+        print("Data (2/2) failed to download")
+        pass
 
 def loadData(dPath):
     print("Loading data")
