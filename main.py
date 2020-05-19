@@ -4,15 +4,22 @@ import plotly
 import plotly.offline as plo
 import plotly.graph_objs as go
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util import Retry
 import time
 import fileinput
 
 def downloadData(dPath):
+    session = requests.Session()
+    retry = Retry(connect=10, backoff_factor=5)
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount('http://', adapter)
+    session.mount('https://', adapter)
     try:
         print("Downloading data")
         url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
-        myfile = requests.get(url, allow_redirects=True)
-        open(dPath+"data.csv", 'wb').write(myfile.content)
+        myfile = session.get(url, allow_redirects=True)
+        # open(dPath+"data.csv", 'wb').write(myfile.content)
         print("Data (1/2) downloaded")
     except:
         print("Data (1/2) failed to download")
@@ -20,8 +27,8 @@ def downloadData(dPath):
         pass
     try:
         url = "https://ocgptweb.azurewebsites.net/CSVDownload"
-        myfile = requests.get(url, allow_redirects=True)
-        open(dPath+"data2.csv", 'wb').write(myfile.content)
+        myfile = session.get(url, allow_redirects=True)
+        # open(dPath+"data2.csv", 'wb').write(myfile.content)
         print("Data (2/2) downloaded")
     except:
         print("Data (2/2) failed to download")
