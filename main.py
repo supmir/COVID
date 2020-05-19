@@ -182,6 +182,7 @@ while True:
     print("Starting update process at ", time.ctime(time.time()))
     func()
     print("Updated at",time.ctime(time.time()))
+    break
     interval = 4
     for x in range(int(24/interval)):
         time.sleep(60*60*interval)
