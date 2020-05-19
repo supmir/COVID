@@ -11,3 +11,4 @@ class Messages(models.Model):
     verification = models.CharField(max_length=255)
     message = models.TextField()
     verified = models.BooleanField()
+    visible = models.BooleanField(default=True)

@@ -47,10 +47,7 @@
     {% if latest_message_list %}
     <div class="w3-row-padding">
         {% for message in latest_message_list %}
-        <!-- {% cycle 1 2 3 as x silent %} -->
-        <!-- {% if x == 1 %}
-    <div class="w3-row-padding">
-        {% endif %} -->
+        {% if message.visible %}
 
         <div class="w3-padding-16 w3-col m6 l4">
             <div class="w3-card-4">
@@ -76,9 +73,7 @@
             </div>
         </div>
 
-        <!-- {% if x == 3 %}
-    </div>
-    {% endif %} -->
+        {% endif %}
         {% endfor %}
     </div>
 
