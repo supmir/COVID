@@ -26,7 +26,8 @@ def downloadData(dPath):
 
         pass
     try:
-        url = "https://ocgptweb.azurewebsites.net/CSVDownload"
+        # url = "https://ocgptweb.azurewebsites.net/CSVDownload"
+        url = "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv"
         myfile = session.get(url, allow_redirects=True)
         # open(dPath+"data2.csv", 'wb').write(myfile.content)
         print("Data (2/2) downloaded")
