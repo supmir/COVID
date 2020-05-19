@@ -19,7 +19,7 @@ def downloadData(dPath):
         print("Downloading data")
         url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
         myfile = session.get(url, allow_redirects=True)
-        # open(dPath+"data.csv", 'wb').write(myfile.content)
+        open(dPath+"data.csv", 'wb').write(myfile.content)
         print("Data (1/2) downloaded")
     except:
         print("Data (1/2) failed to download")
@@ -29,7 +29,7 @@ def downloadData(dPath):
         # url = "https://ocgptweb.azurewebsites.net/CSVDownload"
         url = "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv"
         myfile = session.get(url, allow_redirects=True)
-        # open(dPath+"data2.csv", 'wb').write(myfile.content)
+        open(dPath+"data2.csv", 'wb').write(myfile.content)
         print("Data (2/2) downloaded")
     except:
         print("Data (2/2) failed to download")
@@ -77,7 +77,7 @@ def normaliseData2(data2,cleanedData):
         for y in data2:
             if y[0] == cur:
                 # print(y[len(y)-1])
-                strictness = y[len(y)-2]
+                strictness = y[len(y)-3] if y[len(y)-3] != "" else strictness
         x[0] = cur +" ("+ strictness+")"
     return cleanedData
 
