@@ -76,8 +76,9 @@ def normaliseData2(data2,cleanedData):
         strictness = "NA"
         for y in data2:
             if y[0] == cur:
-                # print(y[len(y)-1])
+                print(y[len(y)-3])
                 strictness = y[len(y)-3] if y[len(y)-3] != "" else strictness
+                print(strictness)
         x[0] = cur +" ("+ strictness+")"
     return cleanedData
 
