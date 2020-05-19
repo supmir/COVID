@@ -5,11 +5,27 @@ from django.views import generic
 from django.template import loader
 # Create your views here.
 from .models import Messages
+import os
+from django.http.response import Http404
 
 def index(request):
     template = loader.get_template('information/index.html')
     context = {}
     return HttpResponse(template.render(context,request))
+
+
+def multiview(request,page_name):
+
+    FTP_UPLOAD_DIR = '/home/iskandar_amir/covid2/static/information/html/'
+    if os.path.exists(FTP_UPLOAD_DIR + page_name+".html"):
+    # if yes, then serve the page
+        with open(FTP_UPLOAD_DIR + page_name+".html") as f:
+            response = HttpResponse(f.read())
+        return response
+
+    else:
+        raise Http404
+    
 
 def cc(request):
     template = loader.get_template('information/cc.html')

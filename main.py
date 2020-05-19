@@ -148,7 +148,8 @@ def fixForMobile(path):
 def func():
     if isLinux:
         # dPath , wPath = "/home/iskandar_amir/covid/","/var/www/html/"
-        dPath , wPath = "/home/iskandar_amir/covid/","/home/iskandar_amir/covid2/information/templates/information/"
+        # dPath , wPath = "/home/iskandar_amir/covid/","/home/iskandar_amir/covid2/information/templates/information/"
+        dPath , wPath = "/home/iskandar_amir/covid/","/home/iskandar_amir/covid2/static/information/html/"
     else:
         dPath, wPath = "/Users/amir/Desktop/covid/","/Users/amir/Desktop/covid/"
 
