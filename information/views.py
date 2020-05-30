@@ -14,12 +14,12 @@ def index(request):
     return HttpResponse(template.render(context,request))
 
 
-def multiview(request,page_name):
+def multiview(request,pagename):
 
     FTP_UPLOAD_DIR = '/home/iskandar_amir/covid2/static/information/html/'
-    if os.path.exists(FTP_UPLOAD_DIR + page_name+".html"):
+    if os.path.exists(FTP_UPLOAD_DIR + pagename+".html"):
     # if yes, then serve the page
-        with open(FTP_UPLOAD_DIR + page_name+".html") as f:
+        with open(FTP_UPLOAD_DIR + pagename+".html") as f:
             response = HttpResponse(f.read())
         return response
 
