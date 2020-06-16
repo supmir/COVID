@@ -44,8 +44,7 @@ def pzc(request):
     return HttpResponse(template.render(context,request))
 
 
-def messages(request, page="0"):
-    page = int(page)
+def messages(request, page=0):
     latest_message_list = Messages.objects.order_by('-timestamp')[(page-1)*25:(page)*25]
     # latest_message_list = Messages.objects.order_by('-timestamp')[:25]
     context = {'latest_message_list': latest_message_list,
