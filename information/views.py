@@ -45,11 +45,13 @@ def pzc(request):
 
 
 def messages(request, page=1):
+    if(page==0):
+        page=1
     latest_message_list = Messages.objects.order_by('-timestamp')[(page-1)*25:(page)*25]
     # latest_message_list = Messages.objects.order_by('-timestamp')[:25]
     context = {'latest_message_list': latest_message_list,
-                'is_first_page':True if page-1<0 else False,
-                'is_last_page':True if page+1>math.ceil(len(latest_message_list)/25) else False,
+                'is_first_page':False if page-1<0 else True,
+                'is_last_page':False if page+1>math.ceil(len(latest_message_list)/25) else True,
                 'prev_page':page-1 if page-1<0 else 0,
                 'next_page':page+1 if page+1<math.ceil(len(latest_message_list)/25) else 0,
     }
