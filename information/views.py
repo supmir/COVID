@@ -50,7 +50,7 @@ def messages(request, page=1):
     latest_message_list = Messages.objects.order_by('-timestamp')[(page-1)*25:(page)*25]
     # latest_message_list = Messages.objects.order_by('-timestamp')[:25]
     context = {'latest_message_list': latest_message_list,
-                'prev_page':page-1 if page-1<0 else False,
-                'next_page':page+1 if page+1<math.ceil(len(latest_message_list)/25) else False,
+                'prev_page':page-1,
+                'next_page':page+1 if page+1<math.ceil(len(latest_message_list)/25) else 0,
     }
     return render(request, 'information/messages.html', context)
