@@ -44,6 +44,6 @@ def pzc(request):
 
 
 def messages(request):
-    latest_message_list = Messages.objects.order_by('-timestamp')
+    latest_message_list = Messages.objects.order_by('-timestamp')[:25]
     context = {'latest_message_list': latest_message_list}
     return render(request, 'information/messages.html', context)
