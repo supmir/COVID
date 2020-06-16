@@ -87,13 +87,13 @@
         <div class="w3-container w3-col s0 m1 l2"></div>
         <div class="w3-container w3-col s12 m10 l8">
             <div class="w3-center">
-                {{ if prev_page !=0 }}
+                {{ if not is_first_page }}
                 <div class="w3-col w3-left" style="width:48%;">
                     <a href="DearCovid/{{prev_page}}"
                     class="w3-button w3-green w3-block">Previous</a>
                 </div>
                 {{ endif }}
-                {{ if next_page!=0 }}
+                {{ if not is_last_page }}
                 <div class="w3-col w3-right" style="width:48%;">
                     <a href="DearCovid/{{next_page}}"
                     class="w3-button w3-green w3-block">Next</a>
