@@ -32,23 +32,31 @@
         <div class="w3-col w3-container s0 m1 l2"></div>
 
         {% cycle '<div class="w3-col w3-container s0 m2 l4">' '<div hidden>' %}
-            <p style="text-align:right">
-                {{ photo.short_description }}
-            </p>
-        </div>
-        <div class="w3-col w3-container s12 m8 l4">
-            <img src="{{ photo.link }}" alt="{{ photo.short_description }}">
-        </div>
-        {% cycle '<div hidden>' '<div class="w3-col w3-container s0 m2 l4">' %}
-            <p>
-                {{ photo.short_description }}
-            </p>
-        </div>
+        <h2>
+            {{ photo.short_description }}
 
-        <div class="w3-col w3-container s0 m1 l2"></div>
+        </h2>
+        <p style="text-align:right">
+            {{ photo.description }}
+        </p>
+    </div>
+    <div class="w3-col w3-container s12 m8 l4">
+        <img src="{{ photo.link }}" alt="{{ photo.short_description }}">
+    </div>
+    {% cycle '<div hidden>' '<div class="w3-col w3-container s0 m2 l4">' %}
+    <h2>
+        {{ photo.short_description }}
+
+    </h2>
+    <p>
+        {{ photo.description }}
+    </p>
+    </div>
+
+    <div class="w3-col w3-container s0 m1 l2"></div>
 
 
-<!-- 
+    <!-- 
 
         <div class="w3-col w3-container s0 m1 l2"></div>
         <div class="w3-col w3-container s12 m10 l8">
