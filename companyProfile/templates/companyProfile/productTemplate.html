@@ -28,11 +28,30 @@
 
     {% for photo in product.photos_set.all %}
     <div class="w3-row">
+        <!-- <div class="w3-col w3-container s0 m1 l2"></div> -->
+        <div class="w3-col w3-container {% cycle 's0 m2 l4' 's0 m0 l0' %}">
+            <p>
+                {{ photo.short_description }}
+            </p>
+        </div>
+        <div class="w3-col w3-container s12 m10 l8">
+            <img src="{{ photo.link }}" alt="{{ photo.short_description }}">
+        </div>
+        <div class="w3-col w3-container {% cycle 's0 m0 l0' 's0 m2 l4' %}">
+            <p>
+                {{ photo.short_description }}
+            </p>
+        </div>
+        <!-- <div class="w3-col w3-container s0 m1 l2"></div> -->
+
+
+<!-- 
+
         <div class="w3-col w3-container s0 m1 l2"></div>
         <div class="w3-col w3-container s12 m10 l8">
             <img src="{{ photo.link }}" alt="{{ photo.short_description }}">
         </div>
-        <div class="w3-col w3-container s0 m1 l2"></div>
+        <div class="w3-col w3-container s0 m1 l2"></div> -->
     </div>
     {% endfor %}
 
