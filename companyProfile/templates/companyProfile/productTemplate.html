@@ -28,14 +28,15 @@
 
     {% for photo in product.photos_set.all %}
     <div class="w3-row">
-        <!-- <div class="w3-col w3-container s0 m1 l2"></div> -->
+
+        <div class="w3-col w3-container s0 m1 l2"></div>
 
         {% cycle '<div class="w3-col w3-container s0 m2 l4">' '<div hidden>' %}
             <p style="text-align:right">
                 {{ photo.short_description }}
             </p>
         </div>
-        <div class="w3-col w3-container s12 m10 l8">
+        <div class="w3-col w3-container s12 m8 l4">
             <img src="{{ photo.link }}" alt="{{ photo.short_description }}">
         </div>
         {% cycle '<div hidden>' '<div class="w3-col w3-container s0 m2 l4">' %}
@@ -43,7 +44,8 @@
                 {{ photo.short_description }}
             </p>
         </div>
-        <!-- <div class="w3-col w3-container s0 m1 l2"></div> -->
+
+        <div class="w3-col w3-container s0 m1 l2"></div>
 
 
 <!-- 
