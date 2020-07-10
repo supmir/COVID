@@ -22,6 +22,7 @@ from . import views
 urlpatterns = [
     # path('', views.IndexView.as_view(), name='index'),
     path('', include('information.urls')),
+    path('corexs', include('companyProfile.urls')),
     path('admin/', admin.site.urls),
 ]
 
