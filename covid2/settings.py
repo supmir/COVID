@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['19-ncov.cf','localhost','35.232.197.225']
 
 INSTALLED_APPS = [
     'information.apps.InformationConfig',
+    'companyProfile.apps.CompanyProfileConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
