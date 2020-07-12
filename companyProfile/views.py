@@ -18,6 +18,7 @@ def product_index(request):
 def product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     content = product.content_set.all().order_by('sequence')
+    content = product.content_set.all()
     context = {'product': product, 'content': content}
     return render(request, 'companyProfile/product_template.html', context)
 
