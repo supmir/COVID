@@ -22,10 +22,10 @@ max-height: 100%;
 
 
 {% for content in contents %}
-{% if content.content_type == "text"%}
+{% if content.content_type == "text" %}
 
 
-{% elif content.content_type == "photo"%}
+{% elif content.content_type == "photo" %}
 <div class="w3-row">
 
     <div class="w3-col w3-container s0 m1 l2"></div>
@@ -54,7 +54,7 @@ max-height: 100%;
 
 <div class="w3-col w3-container s0 m1 l2"></div>
 </div>
-{% elif content.content_type == "video"%}
+{% elif content.content_type == "video" %}
 <div class="w3-row">
     <div class="w3-col w3-container s0 m1 l2"></div>
     <div class="w3-col w3-container s12 m10 l8">
@@ -68,6 +68,6 @@ max-height: 100%;
 </div>
 {% else %}
 <p>{{content.content_type}}</p>
-(% end if%)
+(% end if %)
 {% endfor %}
 {% endblock %}
