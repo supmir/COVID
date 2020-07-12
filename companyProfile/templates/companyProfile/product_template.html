@@ -10,7 +10,6 @@
 {% endblock %}
 
 {% block content %}
-
     <div class="w3-row">
         <div class="w3-col w3-container s0 m1 l2"></div>
         <div class="w3-col w3-container s12 m10 l8">
@@ -21,12 +20,12 @@
         <div class="w3-col w3-container s0 m1 l2"></div>
     </div>
 
+
     {% for content in contents %}
     {% if content.content_type == "text"}
     
-    (% end if%)
 
-    {% if content.content_type == "photo"}
+    {% elif content.content_type == "photo"}
     <div class="w3-row">
 
         <div class="w3-col w3-container s0 m1 l2"></div>
@@ -55,9 +54,7 @@
 
     <div class="w3-col w3-container s0 m1 l2"></div>
     </div>
-    (% end if%)
-
-    {% if content.content_type == "video"}
+    {% elif content.content_type == "video"}
     <div class="w3-row">
         <div class="w3-col w3-container s0 m1 l2"></div>
         <div class="w3-col w3-container s12 m10 l8">
@@ -69,6 +66,8 @@
         </div>
         <div class="w3-col w3-container s0 m1 l2"></div>
     </div>
+    {% else %}
+    <p>{{content.content_type}}</p>
     (% end if%)
     {% endfor %}
 {% endblock %}
