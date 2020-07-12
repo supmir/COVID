@@ -22,8 +22,14 @@ max-height: 100%;
 
 
     {% for conten in contents %}
-    {% if conten.content_type == "text" %}
-    <p>{{ conten.content_type }}</p>
+    {% if conten.content_type == "text" %}<div class="w3-row">
+        <div class="w3-col w3-container s0 m1 l2"></div>
+        <div class="w3-col w3-container s12 m10 l8">
+            <h1>{{ conten.short_description }}</h1>
+            <p>{{ conten.description }}</p>
+        </div>
+        <div class="w3-col w3-container s0 m1 l2"></div>
+    </div>
     {% endif %}
     {% if conten.content_type == "photo" %}
         <div class="w3-row">
