@@ -6,3 +6,4 @@ from .models import Videos
 admin.site.register(Product)
 admin.site.register(Photos)
 admin.site.register(Videos)
+admin.site.register(Content)
