@@ -8,7 +8,12 @@
 {% for product in products %}
 <div class="w3-row">
     <div class="w3-col w3-container s0 m1 l2"></div>
-    <div class="w3-col w3-container s12 m10 l8"><a href="/corexs/{{ product.id }}/">{{ product.product_name }}</a></div>
+    <div class="w3-col w3-container s12 m10 l8">
+        <div class="w3-bar">
+            <button class="w3-button w3-black">
+                <a href="/corexs/{{ product.id }}/">{{ product.product_name }}</a></button>
+        </div>
+    </div>
     <div class="w3-col w3-container s0 m1 l2"></div>
 </div>
 {% endfor %}
