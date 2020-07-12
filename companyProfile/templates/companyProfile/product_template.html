@@ -22,51 +22,6 @@ max-height: 100%;
 
 
     {% for conten in contents %}
-        {% if conten.content_type == "text" %}
-        <p></p>
-        (% endif %)
-        {% if conten.content_type == "photo" %}
-            <div class="w3-row">
-
-                <div class="w3-col w3-container s0 m1 l2"></div>
-
-                {% cycle '<div class="w3-col w3-container s0 m2 l4">' '<div hidden>' %}
-                <h2>
-                    {{ conten.short_description }}
-
-                </h2>
-                <p style="text-align:right">
-                    {{ conten.description }}
-                </p>
-            </div>
-            <div class="w3-col w3-container s12 m8 l4">
-                <img src="{{ conten.link }}" alt="{{ conten.short_description }}">
-            </div>
-            {% cycle '<div hidden>' '<div class="w3-col w3-container s0 m2 l4">' %}
-            <h2>
-                {{ conten.short_description }}
-
-            </h2>
-            <p>
-                {{ conten.description }}
-            </p>
-            </div>
-
-            <div class="w3-col w3-container s0 m1 l2"></div>
-            </div>
-        (% endif %)
-        <!-- {% if conten.content_type == "video" %}
-            <div class="w3-row">
-                <div class="w3-col w3-container s0 m1 l2"></div>
-                <div class="w3-col w3-container s12 m10 l8">
-                    <div style="position:relative; width:100%; height:0px; padding-bottom:56.25%;">
-                        <iframe style="position:absolute; left:0; top:0; width:100%; height:100%" src="{{ conten.link }}">
-                        </iframe>
-                    </div>
-                </div>
-                <div class="w3-col w3-container s0 m1 l2"></div>
-            </div>
-        (% endif %) -->
         <p>{{ conten.content_type }}</p>
     {% endfor %}
 {% endblock %}
