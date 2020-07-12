@@ -16,3 +16,6 @@ def product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     context = {'product': product}
     return render(request, 'companyProfile/product_template.html', context)
+
+def contact(request, product_id):
+    return render(request, 'companyProfile/contact.html')
