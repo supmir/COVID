@@ -19,8 +19,8 @@ def product_index(request):
 def product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     # content = product.content_set.all().order_by('sequence')
-    content = Content.objects.filter(product_id=int(product_id)).order_by('sequence')
-    context = {'product': product, 'content': content}
+    contents = Content.objects.filter(product_id=int(product_id)).order_by('sequence')
+    context = {'product': product, 'contents': contents}
     return render(request, 'companyProfile/product_template.html', context)
 
 
