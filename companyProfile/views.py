@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render
 # Create your views here.
 from django.http import HttpResponse
 from .models import Product
+from .models import Content
 
 
 def index(request):
@@ -17,8 +18,8 @@ def product_index(request):
 
 def product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-    content = product.content_set.all().order_by('sequence')
-    content = product.content_set.all()
+    # content = product.content_set.all().order_by('sequence')
+    content = Content.objects.filter(product_id=int(product_id)).order_by('sequence')
     context = {'product': product, 'content': content}
     return render(request, 'companyProfile/product_template.html', context)
 
