@@ -17,5 +17,5 @@ def product(request, product_id):
     context = {'product': product}
     return render(request, 'companyProfile/product_template.html', context)
 
-def contact(request, product_id):
+def contact(request):
     return render(request, 'companyProfile/contact.html')
