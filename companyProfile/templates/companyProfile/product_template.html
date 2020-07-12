@@ -21,8 +21,12 @@
         <div class="w3-col w3-container s0 m1 l2"></div>
     </div>
 
+    {% for content in contents %}
+    {% if content.content_type == "text"}
+    
+    (% end if%)
 
-    {% for photo in product.photos_set.all %}
+    {% if content.content_type == "photo"}
     <div class="w3-row">
 
         <div class="w3-col w3-container s0 m1 l2"></div>
@@ -50,20 +54,10 @@
     </div>
 
     <div class="w3-col w3-container s0 m1 l2"></div>
-
-
-    <!-- 
-
-        <div class="w3-col w3-container s0 m1 l2"></div>
-        <div class="w3-col w3-container s12 m10 l8">
-            <img src="{{ photo.link }}" alt="{{ photo.short_description }}">
-        </div>
-        <div class="w3-col w3-container s0 m1 l2"></div> -->
     </div>
-    {% endfor %}
+    (% end if%)
 
-    {% for video in product.videos_set.all %}
-
+    {% if content.content_type == "video"}
     <div class="w3-row">
         <div class="w3-col w3-container s0 m1 l2"></div>
         <div class="w3-col w3-container s12 m10 l8">
@@ -75,6 +69,6 @@
         </div>
         <div class="w3-col w3-container s0 m1 l2"></div>
     </div>
-
+    (% end if%)
     {% endfor %}
 {% endblock %}

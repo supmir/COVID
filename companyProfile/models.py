@@ -28,3 +28,23 @@ class Videos(models.Model):
     description = models.TextField()
     def __str__(self):
         return self.short_description
+
+
+class Content(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    sequence = models.IntegerField()
+    text = "text"
+    photo = "photo"
+    video = "video"
+    content_types = [
+        (text, "text"),
+        (photo, "photo"),
+        (video, "video")
+    ]
+    content_type = models.CharField(max_length=200, choices=content_types)
+    link = models.CharField(max_length=200)
+    short_description = models.TextField()
+    description = models.TextField()
+
+    def __str__(self):
+        return self.short_description
