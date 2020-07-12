@@ -1,0 +1,16 @@
+{% extends "companyProfile/base.html" %}
+
+
+{% block title %}Products{% endblock%}
+
+{% block content %}
+{% if products %}
+    <ul>
+    {% for product in products %}
+        <li><a href="/corexs/{{ product.id }}/">{{ product.product_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No products are available.</p>
+{% endif %}
+{% endblock %}
