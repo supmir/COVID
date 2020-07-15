@@ -18,6 +18,12 @@
             background-color: #333;
         }
 
+        .topnav img {
+            float: left;
+            display: block;
+            padding: 14px 16px;
+            max-height: inherit;
+        }
         .topnav a {
             float: left;
             display: block;
@@ -42,6 +48,8 @@
             display: none;
         }
 
+        
+        
         @media screen and (max-width: 600px) {
             .topnav a:not(:first-child) {
                 display: none;
@@ -79,6 +87,7 @@
     {% block navbar %}
     <div class="topnav" id="myTopnav">
         <!-- <a href="/corexs/" class="active">Home</a> -->
+        <img src="https://i.imgur.com/Sm2z76Q.png"></img>
         <a href="/corexs/">Home</a>
         <a href="/corexs/products">Products</a>
         <a href="/corexs/contact">Contact</a>
