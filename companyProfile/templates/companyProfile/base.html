@@ -16,14 +16,22 @@
         .topnav {
             overflow: hidden;
             background-color: #333;
+            position: relative;
         }
 
         .topnav img {
             float: left;
             display: block;
             padding: 14px 16px;
-            max-height: 100%;
+            max-height: 150%;
+
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
         }
+
         .topnav a {
             float: left;
             display: block;
@@ -32,6 +40,12 @@
             padding: 14px 16px;
             text-decoration: none;
             font-size: 17px;
+
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
         }
 
         .topnav a:hover {
@@ -48,8 +62,8 @@
             display: none;
         }
 
-        
-        
+
+
         @media screen and (max-width: 600px) {
             .topnav a:not(:first-child) {
                 display: none;
@@ -78,8 +92,14 @@
                 text-align: left;
             }
         }
-        {% block style %}
-        {% endblock %}
+
+            {
+            % block style %
+        }
+
+            {
+            % endblock %
+        }
     </style>
 </head>
 
@@ -92,9 +112,9 @@
         <a href="/corexs/products">Products</a>
         <a href="/corexs/contact">Contact</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
+            <i class="fa fa-bars"></i>
         </a>
-      </div>
+    </div>
     {% endblock %}
     {% block content %}
     {% endblock %}
@@ -102,14 +122,14 @@
 
     <script>
         function myFunction() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
         }
-        </script>
+    </script>
 </body>
 
 </html>
