@@ -17,7 +17,7 @@ margin: 20px 5px;
 flex-grow: 1;
 }
 
-}.flex-container > div *{
+}.flex-container .w3-button{
 width:100%;
 }
 
@@ -30,8 +30,8 @@ width:100%;
     <div class="w3-col w3-container s12 m10 l8">
         <div class="flex-container">
             {% for product in products %}
-            <div class="w3-card">
-                <a class="w3-button w3-center" href="/corexs/products/{{ product.id }}/">
+            <div class="w3-card w3-center">
+                <a class="w3-button" href="/corexs/products/{{ product.id }}/">
                     <p> {{ product.product_name }}</p>
                 </a>
             </div>
