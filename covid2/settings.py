@@ -28,7 +28,7 @@ with open('/etc/secret_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['19-ncov.cf','products.core-xs.com','localhost']
+ALLOWED_HOSTS = ['19-ncov.cf','localhost']
 
 # Application definition
 
