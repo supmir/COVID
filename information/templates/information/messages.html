@@ -28,7 +28,7 @@
 
             {% for message in page_obj reversed %}
                 {% if message.visible %}
-                    <div style="bubble-container">
+                    <div class="bubble-container">
                         <div class="talk-bubble tri-right left-top">
                             <div class="username {% if message.verified %}verified{% endif %}">
                                 <p>{{ message.name }}, {{ message.age }}</p>
