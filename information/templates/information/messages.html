@@ -21,10 +21,10 @@
     </div>
 
     {% if page_obj %}
-        {% if page_obj.has_previous %}
-            <a href="{{page_obj.previous_page_number}}" class="w3-button w3-bar loader">Load older messages</a>
-        {% endif %}
         <div class="w3-row-padding" id="content">
+            {% if page_obj.has_next %}
+                <a href="{{page_obj.next_page_number}}" class="w3-button w3-bar loader">Load older messages</a>
+            {% endif %}
             {% for message in page_obj reversed %}
                 {% if message.visible %}
                     <div style="bubble-container">
@@ -41,10 +41,10 @@
                     </div>
                 {% endif %}
             {% endfor %}
+            {% if page_obj.has_previous %}
+                <a href="{{page_obj.previous_page_number}}" class="w3-button w3-bar loader">Load newer messages</a>
+            {% endif %}
         </div>
-        {% if page_obj.has_next %}
-            <a href="{{page_obj.next_page_number}}" class="w3-button w3-bar loader">Load newer messages</a>
-        {% endif %}
     {% else %}
         <p>No messages are available. Be the first one!</p>
     {% endif %}
