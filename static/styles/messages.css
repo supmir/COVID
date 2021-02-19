@@ -114,15 +114,16 @@ body {
 /* talk bubble contents */
 
 .username {
-    padding: 0em 1em 0em 1em;
-    font-size: small;
+    padding: 0px 5px 0px 5px;
+    /* font-size: small; */
     font-weight: 800;
     color: var(--username);
 }
 
 .talktext {
-    padding: 0em 1em 1em 1em;
+    padding: 0px 5px 5px 5px;
     color: var(--message);
+    font-size: larger;
 }
 
 .username,
