@@ -116,7 +116,7 @@ body {
 
 .username {
     padding: 0px 10px 0px 10px;
-    /* font-size: small; */
+    font-size: small;
     font-weight: 800;
     color: var(--username);
 }
@@ -124,7 +124,6 @@ body {
 .talktext {
     padding: 0px 10px 5px 10px;
     color: var(--message);
-    font-size: larger;
 }
 
 .username,
