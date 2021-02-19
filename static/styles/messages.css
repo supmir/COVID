@@ -51,6 +51,7 @@ body {
     background-color: #f1f1f1;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
+    width: 100%;
 }
 
 .bottom-dummy {
@@ -63,7 +64,7 @@ body {
 }
 
 .bubble-container {
-    width: 100%;
+    width: 90%;
 }
 
 #content>*:first-child {
@@ -78,7 +79,7 @@ body {
     margin: 10px 40px 10px 40px;
     display: inline-block;
     position: relative;
-    width: 90%;
+    width: 100%;
     height: auto;
     background-color: var(--bubble);
 }
@@ -114,14 +115,14 @@ body {
 /* talk bubble contents */
 
 .username {
-    padding: 0px 5px 0px 5px;
+    padding: 0px 10px 0px 10px;
     /* font-size: small; */
     font-weight: 800;
     color: var(--username);
 }
 
 .talktext {
-    padding: 0px 5px 5px 5px;
+    padding: 0px 10px 5px 10px;
     color: var(--message);
     font-size: larger;
 }
@@ -144,4 +145,5 @@ body {
 .loader {
     color: white;
     background-color: var(--loader);
+    width: 100%;
 }
