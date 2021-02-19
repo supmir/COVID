@@ -50,7 +50,7 @@ def messages(request, page=1):
     length = 24
     if(page<=0):
         page=1
-    latest_message_list = Messages.objects.order_by('timestamp')
+    latest_message_list = Messages.objects.order_by('-timestamp')
     paginator = Paginator(latest_message_list, 20)
 
     page_obj = paginator.get_page(page)
