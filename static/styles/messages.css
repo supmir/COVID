@@ -1,0 +1,146 @@
+/* :root {
+    --background: #293132;
+    --bubble: #4F5165;
+    --header: #aaa;
+    --footer: #00000055;
+    --loader: #ffffff50;
+    --username: #00000099;
+    --message: #ffffff99;
+} */
+
+:root {
+    --background: #293132;
+    --bubble: #4F5165;
+    --header: #739E82;
+    --footer: #739E82;
+    --loader: #ffffff50;
+    --username: #000;
+    --message: #ffffff99;
+}
+
+#top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10ps;
+    z-index: 1;
+    color: white;
+    background-color: var(--header);
+}
+
+#bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 1;
+    color: white;
+    background-color: var(--footer);
+}
+
+body {
+    background: var(--background);
+}
+
+.content {
+    cursor: pointer;
+    min-height: 75px;
+    max-height: 75px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.bottom-dummy {
+    height: 50px;
+}
+
+.bottom-button {
+    float: left;
+    width: 50%;
+}
+
+.bubble-container {
+    width: 100%;
+}
+
+#content>*:first-child {
+    margin-top: 80px;
+}
+
+#content>*:last-child {
+    margin-bottom: 50px;
+}
+
+.talk-bubble {
+    margin: 10px 40px 10px 40px;
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    height: auto;
+    background-color: var(--bubble);
+}
+
+.tri-right.border.left-top:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -40px;
+    right: auto;
+    top: -8px;
+    bottom: auto;
+    border: 32px solid;
+    border-color: #666 transparent transparent transparent;
+}
+
+.tri-right.left-top:after {
+    z-index: -1;
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -20px;
+    right: auto;
+    top: 0px;
+    bottom: auto;
+    border: 22px solid;
+    border-color: var(--bubble) transparent transparent transparent;
+}
+
+
+/* talk bubble contents */
+
+.username {
+    padding: 0em 1em 0em 1em;
+    font-size: small;
+    font-weight: 800;
+    color: var(--username);
+}
+
+.talktext {
+    padding: 0em 1em 1em 1em;
+    color: var(--message);
+}
+
+.username,
+.talktext {
+    overflow-wrap: break-word;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.talktext p,
+.username p {
+    /* remove webkit p margins */
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    display: inline;
+}
+
+.loader {
+    color: white;
+    background-color: var(--loader);
+}

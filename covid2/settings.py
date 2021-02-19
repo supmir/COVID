@@ -75,15 +75,11 @@ WSGI_APPLICATION = 'covid2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-#DATABASES = {
+# DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#        'ENGINE': 'django.db.backends.mysql',
-#        'OPTIONS': {
-#            'read_default_file': '/etc/mysql/my.cnf',
 #    }
-#}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -133,8 +129,15 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static"),
 ]
-print("STATIC_ROOT",STATIC_ROOT)
+# print("STATIC_ROOT",STATIC_ROOT)
+# print("STATICFILES_DIRS",STATICFILES_DIRS)
+
+# SITE_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+# STATICFILES_DIRS = (
+#   os.path.join(SITE_ROOT, 'static/'),
+# )
+# print("SITE_ROOT",SITE_ROOT)
 # print("STATICFILES_DIRS",STATICFILES_DIRS)
 

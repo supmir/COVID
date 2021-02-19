@@ -3,6 +3,8 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 from django.template import loader
+from django.core.paginator import Paginator
+
 # Create your views here.
 from .models import Messages
 import os
@@ -48,10 +50,21 @@ def messages(request, page=1):
     length = 24
     if(page<=0):
         page=1
-    latest_message_list = Messages.objects.order_by('-timestamp')[(page-1)*length:(page)*length]
-    # latest_message_list = Messages.objects.order_by('-timestamp')[:length]
+    latest_message_list = Messages.objects.order_by('timestamp')
+    paginator = Paginator(latest_message_list, 20)
+
+    page_obj = paginator.get_page(page)
+
     context = {'latest_message_list': latest_message_list,
-                'prev_page':page-1,
-                'next_page':page+1 if len(latest_message_list)==length else 0,
+                'page_obj':page,
     }
     return render(request, 'information/messages.html', context)
+# def messages(request, page=1):
+#     if(page<0):
+#         page=0
+#     the_message = Messages.objects.order_by('-timestamp')[page]
+#     context = {'the_message': the_message,
+#                 'prev_page':page-1,
+#                 'next_page':page+1 if len(latest_message_list)==length else 0,
+#     }
+#     return render(request, 'information/messages.html', context)
