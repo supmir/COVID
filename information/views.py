@@ -56,7 +56,7 @@ def messages(request, page=1):
     page_obj = paginator.get_page(page)
 
     context = {'latest_message_list': latest_message_list,
-                'page_obj':page,
+                'page_obj':page_obj,
     }
     return render(request, 'information/messages.html', context)
 # def messages(request, page=1):
