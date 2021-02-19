@@ -25,14 +25,13 @@
             {% if page_obj.has_next %}
                 <a href="{{page_obj.next_page_number}}" class="w3-button w3-bar loader">Load older messages</a>
             {% endif %}
+
             {% for message in page_obj reversed %}
                 {% if message.visible %}
                     <div style="bubble-container">
                         <div class="talk-bubble tri-right left-top">
-                            <div class="username{% if message.verified %}verified{% endif %}">
-                                <p>
-                                    {{ message.name }}, {{ message.age }}
-                                </p>
+                            <div class="username {% if message.verified %}verified{% endif %}">
+                                <p>{{ message.name }}, {{ message.age }}</p>
                             </div>
                             <div class="talktext">
                                 <p>{{ message.message }}</p>
@@ -41,6 +40,7 @@
                     </div>
                 {% endif %}
             {% endfor %}
+
             {% if page_obj.has_previous %}
                 <a href="{{page_obj.previous_page_number}}" class="w3-button w3-bar loader">Load newer messages</a>
             {% endif %}
