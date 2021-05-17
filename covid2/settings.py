@@ -28,7 +28,7 @@ with open('/etc/secret_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dearcovid.ga','localhost']
+ALLOWED_HOSTS = ['dearcovid.ga','localhost','34.71.242.52']
 
 # Application definition
 
